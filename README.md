@@ -1,6 +1,8 @@
 # CS224n Final Project Dataset
 
-Code to gather dataset for Stanford CS224n course project.
+Code to gather dataset for Stanford CS224n course project. 
+
+The source code is available under [src](src).
 
 To gather the dataset run:
 ```bash
@@ -19,4 +21,4 @@ optional arguments:
 ```
 All of the data is also available [here](data).
 
-Please read the [documentation](Dataset%20Documentation.pdf) for more info about the dataset.
+Please read the [documentation](Phase1-Report.pdf) for more info about the dataset.

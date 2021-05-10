@@ -1,7 +1,6 @@
 from nltk import sent_tokenize, word_tokenize
 import preprocess
 import utils
-import statistics
 
 
 def sentece_word_count(dialogs):
@@ -16,7 +15,9 @@ def character_stats(characters, dialogs):
     for character in characters:
         output, total_sents, word_count = preprocess.remove_accent_and_expand(character, dialogs)
         final_data.append(output)
-        print(f"total number of {character} sentences and words: {total_sents} , {word_count}")
+        print(f"total number of {character} sentences and words: {total_sents} , {word_count}.")
+        print("Finished cleaning the data.")
+    return final_data
 
 
 def total_sents(data, characters):
@@ -87,7 +88,7 @@ def most_repeated(data):
     return dwight_most_repeated, michael_most_repeated
 
 
-def x(data):
+def word_frequency(data):
     word_frequency = utils.word_count(' '.join(data["michael"]) + ' '.join(data["dwight"]))
 
     word_frequency = dict(sorted(word_frequency.items(), key=lambda item: item[1], reverse=True))
@@ -190,8 +191,8 @@ def compute_RNF(docA, docB):
 
 
 def plot_RNF(documentA, documentB):
-    RNF_A = statistics.compute_RNF(documentA, documentB)
-    RNF_B = statistics.compute_RNF(documentB, documentA)
+    RNF_A = compute_RNF(documentA, documentB)
+    RNF_B = compute_RNF(documentB, documentA)
 
     _ = [print(item) for item in list(RNF_A.items())[:10]]
     utils.plot(list(RNF_A.keys())[:10], list(RNF_A.values())[:10], "RNF - Michael", True)

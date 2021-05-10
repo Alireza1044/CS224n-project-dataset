@@ -11,8 +11,7 @@ def clean_path(path):
     os.makedirs(path)
 
 
-def save_all_characters(dialogs):
-    path = os.path.join("data", "raw", "all_characters", "all_characters.json")
+def save_all_characters(dialogs, path):
     with open(path, "w") as f:
         json.dump(dialogs, f, sort_keys=True, indent=4)
 

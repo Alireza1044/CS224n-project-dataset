@@ -36,5 +36,5 @@ def crawl_data():
 
             [dialogs[d[0].lower()].append(d[1]) if d[0].lower() in dialogs.keys() else addd(d[0].lower(), d[1]) for d in
              temp]
-
+    print("Finished crawling the data.")
     return dialogs
